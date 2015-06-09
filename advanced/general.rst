@@ -68,13 +68,17 @@ and a collections of jobs.
 For example, the service ``dummy`` can be access through
 https://gate.angus.ai/services/dummy/1 for version 1.
 Then, two resources are immediatly available:
-* https://gate.angus.ai/services/dummy/1/description
-* https://gate.angus.ai/services/dummy/1/jobs.
+* https://gate.angus.ai/services/dummy/1 is the description of the service
+* https://gate.angus.ai/services/dummy/1/jobs is a collection of jobs
 
 .. parsed-literal::
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b https://gate.angus.ai/services/dummy/1/description
-
+   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b https://gate.angus.ai/services/dummy/1
+    {
+        "url": "http://localhost:9000/sevices/dummy/1",
+        "version": 1,
+        "description": "No description"
+    }
 
 Job is a specific resource, it enables calling some service in a RESTful way.
 To create a job just use a **POST** operation on jobs collection, the json body
